@@ -16,6 +16,8 @@ def create_app() -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origin_list,
+        # 线上前端在 Vercel 时，避免忘记配置 CORS_ORIGINS 导致登录「网络异常」
+        allow_origin_regex=r"https://.*\.vercel\.app",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
