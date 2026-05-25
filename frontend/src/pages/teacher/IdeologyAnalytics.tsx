@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Button, Col, Empty, Row, Space, Statistic, Table, Tag, message } from 'antd';
-import dayjs from 'dayjs';
 import { BarChart3, Download } from 'lucide-react';
 import Chart from '../../components/Chart';
 import { ideology } from '../../api';
