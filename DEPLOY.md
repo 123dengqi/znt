@@ -41,7 +41,8 @@ git push -u origin main
 |---|---|
 | Root Directory | `backend` |
 | Runtime | Python 3 |
-| Build Command | `pip install -r requirements.txt` |
+| Build Command | `pip install --upgrade pip setuptools wheel && pip install -r requirements.txt` |
+| Python Version | `3.11.9`（或在 Environment 加 `PYTHON_VERSION=3.11.9`） |
 | Start Command | `uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
 | Instance Type | Free |
 
