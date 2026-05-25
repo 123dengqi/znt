@@ -1,0 +1,19 @@
+# Render 一键部署后端（连 GitHub 后可选 Blueprint）
+# 文档见 DEPLOY.md
+services:
+  - type: web
+    name: personality-psychology-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

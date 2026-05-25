@@ -1,0 +1,202 @@
+.graph-shell {
+  display: grid;
+  gap: 18px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.graph-hero {
+  position: relative;
+  border-radius: 20px;
+  padding: 28px 32px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(900px 360px at 0% 0%, rgba(6, 182, 212, 0.55), transparent 60%),
+    radial-gradient(800px 360px at 100% 100%, rgba(124, 58, 237, 0.55), transparent 60%),
+    linear-gradient(135deg, #0a0f24 0%, #0e1f3a 50%, #1f1147 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.graph-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.graph-hero h2 {
+  font-size: 26px;
+  margin: 4px 0 2px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  background: linear-gradient(120deg, #ffffff 0%, #a7f3d0 50%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.graph-hero p { margin: 0; color: rgba(230, 232, 240, 0.86); font-size: 14px; line-height: 1.85; }
+
+.graph-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.graph-orb {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  animation: orbg 14s ease-in-out infinite;
+}
+.graph-orb.a { top: -80px; right: -40px; background: #06b6d4; }
+.graph-orb.b { bottom: -90px; left: 6%; background: #a855f7; animation-delay: -5s; }
+@keyframes orbg {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -16px) scale(1.08); }
+}
+
+/* 工具条 */
+.graph-toolbar {
+  padding: 14px 18px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.graph-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+.cat-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* 图谱画布 */
+.graph-canvas {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  background:
+    radial-gradient(800px 400px at 12% 10%, rgba(99, 102, 241, 0.06), transparent 60%),
+    radial-gradient(800px 400px at 88% 90%, rgba(6, 182, 212, 0.05), transparent 60%),
+    #ffffff;
+}
+.graph-help {
+  position: absolute;
+  z-index: 5;
+  top: 14px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--text-soft);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+.graph-help .close {
+  margin-left: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1;
+}
+.graph-help .close:hover { color: var(--text); }
+
+/* 节点抽屉 */
+.node-panel { display: flex; flex-direction: column; gap: 18px; }
+
+.node-panel-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.node-cat-pill {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.node-panel-head h2 {
+  font-size: 22px;
+  margin: 4px 0 2px;
+  letter-spacing: -0.02em;
+}
+
+.node-panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.neigh-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.neigh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12.5px;
+  transition: all 0.18s ease;
+}
+.neigh-chip:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+.neigh-dot { width: 8px; height: 8px; border-radius: 50%; }
+.neigh-rel {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: #f1f5f9;
+}
+
+.explain-body {
+  font-size: 13.5px;
+  line-height: 1.85;
+  min-height: 80px;
+}
+.explain-body p:first-child { margin-top: 0; }
+
+.node-panel-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-soft);
+}

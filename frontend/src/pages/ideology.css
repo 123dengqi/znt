@@ -1,0 +1,80 @@
+.ideo-hero{
+  background: linear-gradient(120deg, #fff1f7 0%, #fef3c7 60%, #ecfeff 100%);
+  border: 1px solid rgba(244,114,182,0.18);
+  border-radius: 18px;
+  padding: 22px 26px;
+  position: relative;
+  overflow: hidden;
+}
+.ideo-hero::after{
+  content:""; position:absolute; right:-60px; top:-60px;
+  width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%);
+  pointer-events: none;
+}
+.ideo-hero .ttl{ font-size: 20px; font-weight: 700; color: #1f2937; display:flex; gap:10px; align-items:center; }
+.ideo-hero .sub{ color: #64748b; margin-top: 6px; font-size: 13px; line-height: 1.7; max-width: 880px; }
+
+.ideo-chip{
+  display: inline-flex; align-items:center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-size: 12px;
+  background: #fff1f5; color: #be185d; border: 1px solid #fbcfe8;
+}
+.ideo-chip.cat-学科精神{ background:#eef2ff; color:#3730a3; border-color:#c7d2fe; }
+.ideo-chip.cat-人文关怀{ background:#ecfdf5; color:#047857; border-color:#a7f3d0; }
+.ideo-chip.cat-价值认同{ background:#fff7ed; color:#c2410c; border-color:#fed7aa; }
+.ideo-chip.cat-公民意识{ background:#ecfeff; color:#0e7490; border-color:#a5f3fc; }
+.ideo-chip.cat-职业伦理{ background:#fdf2f8; color:#be185d; border-color:#fbcfe8; }
+
+.ideo-card{
+  background:#fff; border:1px solid var(--border-soft);
+  border-radius: 14px; padding: 18px; transition: all .25s;
+}
+.ideo-card:hover{ box-shadow: 0 6px 24px rgba(99,102,241,0.08); transform: translateY(-1px); }
+
+.ideo-guidance{
+  background: linear-gradient(120deg, #fef3c7 0%, #fce7f3 100%);
+  border: 1px solid #fbcfe8;
+  border-radius: 14px;
+  padding: 16px 18px;
+  position: relative;
+}
+.ideo-guidance .lbl{ font-size: 12px; color:#9a3412; font-weight: 600; letter-spacing: .05em; }
+.ideo-guidance .q{ margin-top: 6px; font-size: 15px; color:#7c2d12; line-height: 1.7; }
+
+.ideo-task-card{
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+.ideo-task-card:hover{
+  box-shadow: 0 8px 24px rgba(244,114,182,0.18);
+  transform: translateY(-2px);
+  border-color: #fbcfe8;
+}
+.ideo-task-card .typ{
+  font-size: 11px; padding: 2px 8px; border-radius: 999px;
+  background: #fff1f5; color: #be185d; border: 1px solid #fbcfe8;
+}
+.ideo-task-card .submitted-flag{
+  position: absolute; right: 16px; top: 16px;
+  background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0;
+  font-size: 11px; padding: 2px 8px; border-radius: 999px;
+}
+
+.ideo-plan{
+  background: #fff; border:1px solid var(--border-soft); border-radius: 14px;
+  padding: 18px 22px; max-height: 620px; overflow:auto;
+}
+
+.ideo-feedback{
+  background: linear-gradient(120deg, #ecfeff 0%, #f5f3ff 100%);
+  border: 1px solid #ddd6fe;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+.ideo-feedback h4{ margin:0; color:#5b21b6; font-size:14px; }
